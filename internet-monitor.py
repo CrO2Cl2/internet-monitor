@@ -18,7 +18,7 @@ def read_config():
             muted = 'muted' in lines
             duration = int(lines[-1]) if lines and lines[-1].isdigit() else 1
             return site, muted, duration
-    return 'http://google.com', False, 1
+    return 'http://google.com', False, 40
 
 def write_config(site, muted, duration):
     with open(config_file, 'w') as f:
@@ -59,7 +59,7 @@ if len(sys.argv) > 1:
     elif sys.argv[1] == 'test':
         print("Testing alarm...")
         for _ in range(duration):
-            os.system("say 'Internet connection lost'")
+            os.system("espeak 'Internet connection lost'")
             os.system("echo -n '\a'")
             time.sleep(1)
         sys.exit(0)

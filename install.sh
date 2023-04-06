@@ -2,6 +2,8 @@
 #install python and update system
 sudo apt update 
 sudo apt install python -y
+#installing espeak
+sudo apt install espeak -y
 # Install the Python script
 sudo cp internet-monitor.py /usr/local/bin/internet-monitor.py
 sudo chmod +x /usr/local/bin/internet-monitor.py
