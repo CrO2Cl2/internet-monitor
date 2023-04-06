@@ -1,11 +1,12 @@
 ## Internet Monitor Alarm
- ______          __                                 __                                          __                   
+''' ______          __                                 __                                          __                   
 /\__  _\        /\ \__                             /\ \__           /'\_/`\                  __/\ \__                
 \/_/\ \/     ___\ \ ,_\    __   _ __    ___      __\ \ ,_\         /\      \    ___     ___ /\_\ \ ,_\   ___   _ __  
    \ \ \   /' _ `\ \ \/  /'__`\/\`'__\/' _ `\  /'__`\ \ \/  _______\ \ \__\ \  / __`\ /' _ `\/\ \ \ \/  / __`\/\`'__\
     \_\ \__/\ \/\ \ \ \_/\  __/\ \ \/ /\ \/\ \/\  __/\ \ \_/\______\\ \ \_/\ \/\ \L\ \/\ \/\ \ \ \ \ \_/\ \L\ \ \ \/ 
     /\_____\ \_\ \_\ \__\ \____\\ \_\ \ \_\ \_\ \____\\ \__\/______/ \ \_\\ \_\ \____/\ \_\ \_\ \_\ \__\ \____/\ \_\ 
     \/_____/\/_/\/_/\/__/\/____/ \/_/  \/_/\/_/\/____/ \/__/          \/_/ \/_/\/___/  \/_/\/_/\/_/\/__/\/___/  \/_/ 
+'''
 This utility can be used to warn you when your server has lost access to the internet. When Connection is lost, an Alarm will play. You need a soundcard and a speaker to use this utility.
 ## Installation
 run the install.sh file. this will set everything up for you, python and mpg123 will be installed automatically. 
