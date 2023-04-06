@@ -1,12 +1,13 @@
 #!/bin/sh
 #install python and update system
-sudo apt update 
-sudo apt install python -y
-#installing espeak
-sudo apt install espeak -y
+apt update 
+apt install python -y
+#installing mpg123
+apt install mpg123 -y
 # Install the Python script
-sudo cp internet-monitor.py /usr/local/bin/internet-monitor.py
-sudo chmod +x /usr/local/bin/internet-monitor.py
+cp internet-monitor.py /usr/local/bin/internet-monitor.py
+chmod +x /usr/local/bin/internet-monitor.py
+cp alarm.mp3 /etc/internet-monitor-alarm.mp3
 
 # Install the systemd service file
 sudo tee /etc/systemd/system/internet-monitor.service > /dev/null <<EOT

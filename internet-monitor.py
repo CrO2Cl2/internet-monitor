@@ -51,16 +51,26 @@ def print_help():
 config_file = '/etc/internet-monitor.conf'
 ping_site, muted, duration = read_config()
 
+def play_alarm():
+    try:
+        os.system("mpg123 /etc/internet-monitor-alarm.mp3")
+    except Exception as e:
+        print(f"Error playing alarm: {e}")
+
+config_file = '/etc/internet-monitor.conf'
+ping_site, muted, duration = read_config()
+
 if len(sys.argv) > 1:
     if sys.argv[1] == 'silence':
         write_config(ping_site, True, duration)
         print("Alarm muted.")
         sys.exit(0)
+    if sys.argv[1] == 'unsilence':
+        write_config(ping_site, False, duration)
     elif sys.argv[1] == 'test':
         print("Testing alarm...")
         for _ in range(duration):
-            os.system("espeak 'Internet connection lost'")
-            os.system("echo -n '\a'")
+            play_alarm()
             time.sleep(1)
         sys.exit(0)
     elif sys.argv[1] == 'ping':
@@ -89,7 +99,6 @@ while True:
         alarm_time = time.time() + duration
         while not internet_on(ping_site) and time.time() < alarm_time:
             if not muted:
-                os.system("say 'Internet connection lost'")
-                os.system("echo -n '\a'")
+                play_alarm()
             time.sleep(1)
     time.sleep(5)
